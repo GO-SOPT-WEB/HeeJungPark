@@ -59,9 +59,19 @@ body {
     text-align: center;
 }
 
-i {
-    font-size: 3rem;
-    color:aqua;
+.section_cal_n p{
+    color: black;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.section_cal_n i{
+    font-size: 2rem;
+    color:rgb(255, 245, 190);
+    position:absolute;
+    top:0;
+    left:9px;
 }
 
 .section_cal_date {
