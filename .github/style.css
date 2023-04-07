@@ -133,6 +133,7 @@ article {
 
 .section_card_p {
     width: 150px;
+    text-overflow: ellipsis;
 }
 
 .section_card_img {
