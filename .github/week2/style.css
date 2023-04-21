@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  
+}
+
+
+body {
+  font-family: 'Poor Story', cursive;
+  background-color: rgb(226, 242, 226);
+  padding-top: 4rem;
+}
+
+header {
+  display: flex;
+  position: fixed;  
+  justify-content: space-between;  
+  align-items: center;
+  
+  padding: 10px;
+  height: 50px;
+  
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color:rgb(150, 162, 150);
+}
+
+
+button{
+  background: inherit ; 
+}
+
+ol, ul {
+	list-style: none;
+}
+
+header .header_title {
+  color: rgb(91, 79, 79);
+  margin: 2rem 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.header_hover {
+  color:rgb(52, 86, 52);
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.header_menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  color: #17252A;
+  background-color: rgb(254, 243, 220);
+  letter-spacing: 2px;
+
+  width: 10rem;
+  height: 100vh;
+}
+
+.header_menu_title {
+  padding-bottom: 10rem;
+  padding-left: 2rem;
+  margin-top: 4rem;
+  font-size: 1.5rem;
+}
+
+.header_menu_title > li {
+  font-size: 1rem;
+}
+
+
+.header_hover:hover > .header_menu {
+  display: block;
+}
+
+
+main {
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  flex-shrink:0;
+
+  margin-left: 3rem;
+  padding-right: 2rem;
+  padding-bottom: 3rem;
+  width: 100x;
+  height: fit-content;
+
+  font-weight: bold;
+  font-size: 18px;
+
+  background-color:rgb(150, 162, 150);
+  border-radius: 15px;
+}
+
+nav > h2 {
+  margin: 1rem 1rem;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+}
+
+.nav_menu_list:hover {
+  background-color: #464646;
+  color: #ffffff;
+}
+
+.nav_menu_list {
+  width: 8rem;
+  margin: 0.3rem 0.3rem;
+  margin-left: 1rem;
+  padding: 0.2rem 0.6rem;
+  background-color: #c6c9c9;
+  border-radius: 1rem;
+}
+
+
+.nav_menu_list > label {
+  display: inline-block;
+}
+
+section {
+  margin-left: 25px;
+  margin-right: 25px;
+  display: flex;
+  flex-flow: wrap;
+}
+
+section > div {
+  width: 95%;
+  height: 2rem;
+  margin: 0.5rem 1.2rem;
+}
+
+.section_card_article {
+  display: flex;
+}
+
+.section_card_article > div {
+  
+  padding: 0.3rem 1rem;
+  border-radius: 2.5rem;
+
+  height: fit-content;
+  background-color:rgb(150, 162, 150);
+  
+  border-radius: 2.5rem;
+  color: #def2f1;
+  margin-left: 1rem;
+}
+
+
