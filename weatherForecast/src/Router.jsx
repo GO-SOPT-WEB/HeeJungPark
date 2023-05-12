@@ -4,7 +4,6 @@ import Weather from "./components/Weather";
 import WeekWeather from "./components/WeekWeather";
 import DayWeather from "./components/DayWeather";
 
-
 const Router = () => {
 
     return (
@@ -12,10 +11,10 @@ const Router = () => {
             <Routes>
                 <Route path = "/" element = {<MainPage/>}>
                     <Route path = "/day" element = {<Weather/>}>
-                        <Route path = ":city" element = {<DayWeather/>} />
+                        <Route path = ":area" element = {<DayWeather/>} />
                     </Route>
                     <Route path = "/week" element = {<Weather/>}>
-                        <Route path = ":city" element = {<WeekWeather/>} />
+                        <Route path = ":area" element = {<WeekWeather/>} />
                     </Route>
                 </Route>
             </Routes>

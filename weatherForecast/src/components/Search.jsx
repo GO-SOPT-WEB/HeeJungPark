@@ -5,11 +5,11 @@ import {useState} from "react";
 
 const Search = () => {
     
-    const [option, setOption] = useState("오늘");
-    const [city, setCity] = useState("");
+    const [option, setOption] = useState("day");
+    const [area, setarea] = useState("");
 
     const navigate = useNavigate();
-
+    
 
     return (
         <div>
@@ -17,8 +17,8 @@ const Search = () => {
                 <option value = "day"> 일 </option>
                 <option value = "week"> 주 </option>
             </select>
-            <input onChange = {(e) => {setCity(e.target.value);}}  placeholder = "영어로 도시명 (seoul)"/>
-            <button type = "submit" onClick = {()=> navigate(`/${option}/${city}`)}>
+            <input onChange = {(e) => {setarea(e.target.value);}}  placeholder = "영어로 도시명 (seoul)"/>
+            <button type = "submit" onClick = {()=> navigate(`/${option}/${area}`)}>
                 검색
             </button>
         </div>
