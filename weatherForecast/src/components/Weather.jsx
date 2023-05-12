@@ -6,9 +6,7 @@ const Weather = () => {
     
     return (
         <>
-            <PageLayout>
-                <Outlet/>
-            </PageLayout>
+            <Outlet/>
         </>
     )
 }

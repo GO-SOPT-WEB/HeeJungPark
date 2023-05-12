@@ -1,17 +1,24 @@
 import Header from "./Header";
-
+import styled from 'styled-components';
 const PageLayout = (props) => {
 
     const {children} = props;
 
     return (
         <>
-            <div>
+            <St.PageWrapper>
                 <Header />
                 {children}
-            </div>
+            </St.PageWrapper>
         </>
     );
 };
 
 export default PageLayout;
+
+const St = {
+    PageWrapper : styled.div`
+    display: flex;
+    flex-direction: column;
+    `
+}
