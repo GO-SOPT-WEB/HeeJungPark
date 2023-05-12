@@ -10,13 +10,16 @@ const WeekWeather =() => {
 
     useEffect(() => {
       fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${area}&appid=${
+        `https://api.openweathermap.org/data/2.5/forecast?q=${area}&appid=${
           import.meta.env.VITE_APP_WEATHER
         }&units=metric`
       )
         .then((res) => res.json())
         .then((data) => {
+          console.log(data)
           if (data.cod === "200") {
+            console.log(cardList);
+
             setCardList(
               data.list.filter((c) => c.dt_txt.includes("00:00:00"))
             );
@@ -24,10 +27,11 @@ const WeekWeather =() => {
         })
         .catch((err) => console.log(err));
     }, [area]);
-    
+    console.log(cardList);
+    if (cardList.length)
     return (
         <>
-            <div> week weather </div>
+            
             <WeekWeatherWrapper>
                 {(cardList && cardList.map((data, idx) => (
                     <WeatherCard key = {idx} data = {data}/>
