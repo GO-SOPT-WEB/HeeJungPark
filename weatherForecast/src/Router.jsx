@@ -3,7 +3,7 @@ import MainPage from "./pages/MainPage";
 import Weather from "./components/Weather";
 import WeekWeather from "./components/WeekWeather";
 import DayWeather from "./components/DayWeather";
-
+import ErrorPage from "./pages/ErrorPage";
 const Router = () => {
 
     return (
@@ -17,6 +17,7 @@ const Router = () => {
                         <Route path = ":area" element = {<WeekWeather/>} />
                     </Route>
                 </Route>
+                <Route path = "/error" element = {<ErrorPage/>} />
             </Routes>
         </BrowserRouter>
     );
