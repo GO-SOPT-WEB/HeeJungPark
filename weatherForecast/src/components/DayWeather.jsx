@@ -1,5 +1,6 @@
 import {useParams} from "react-router-dom";
 import WeatherCard from "./WeatherCard";
+import {useState, useEffect} from "react";
 
 const DayWeather =() => {
 
@@ -7,6 +8,7 @@ const DayWeather =() => {
     const {area} = params;
     const [card, setCard] = useState([]);
    
+    
     useEffect(() => {
         fetch(
           `https://api.openweathermap.org/data/2.5/weather?q=${area}&appid=${
@@ -21,7 +23,7 @@ const DayWeather =() => {
           })
           .catch((err) => console.log(err));
     }, [area]);
-
+    
     return (
         <>
             <div> 이건 나와야지</div>
@@ -32,3 +34,4 @@ const DayWeather =() => {
     )
 }
 export default DayWeather;
+

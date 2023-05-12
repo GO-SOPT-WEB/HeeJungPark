@@ -1,5 +1,6 @@
 import {useParams} from "react-router-dom";
 import WeatherCard from "./WeatherCard";
+import {useState, useEffect} from "react";
 
 const WeekWeather =() => {
     const params = useParams();
@@ -17,7 +18,7 @@ const WeekWeather =() => {
             if (data.cod === "200") {
               setCardList(
                 data.list.filter((c) => 
-                  c.dt_txt.includes("12:00:00"))
+                  c.dt_txt.includes("00:00:00"))
               );
             }
           })

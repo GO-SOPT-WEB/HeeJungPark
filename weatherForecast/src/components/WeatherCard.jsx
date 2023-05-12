@@ -5,11 +5,12 @@ const WeatherCard = (props) => {
     const { data } = props;
 
     const dt_txt = data.dt_txt;
-    const temp = data.main.temp;
-    const feels_like = data.main.feels_like;
-    const temp_max = data.main.temp_max;
-    const temp_min = data.main.temp_min;
-    const clouds = data.clouds.all;
+
+    const temp = data.main && data.main.temp;
+    const feels_like = data.main && data.main.feels_like;
+    const temp_max = data.main && data.main.temp_max;
+    const temp_min = data.main && data.main.temp_min;
+    const clouds = (data.clouds && data.clouds.all);
 
     return (
         <div>
