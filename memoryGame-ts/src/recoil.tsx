@@ -1,4 +1,4 @@
-import { atom, selector } from 'recoil';
+import { atom } from 'recoil';
 import { CardType } from './types';
 
 export const levelState = atom({
@@ -15,3 +15,5 @@ export const answerListState = atom<{ pair0: CardType; pair1: CardType }[]>({
   key: 'answerListState',
   default: [],
 });
+
+

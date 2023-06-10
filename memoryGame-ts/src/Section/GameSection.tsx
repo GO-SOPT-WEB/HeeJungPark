@@ -20,15 +20,6 @@ const jjangGu_LIST: CardType[] = [
 
 
 
-
-  
-const GameWrapper = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-`;
-
-
 const GameSection : React.FC<GameSectionProps> = ({findingPair}) => {
   const [level, setLevel] = useRecoilState(levelState);
   const [chosenList, setChosenList] = useRecoilState(chosenListState);
@@ -83,3 +74,9 @@ const GameSection : React.FC<GameSectionProps> = ({findingPair}) => {
 };
 
 export default GameSection;
+  
+const GameWrapper = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+`;
