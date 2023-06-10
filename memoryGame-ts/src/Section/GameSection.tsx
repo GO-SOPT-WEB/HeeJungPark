@@ -4,6 +4,9 @@ import Card from "../Card";
 import styled from "styled-components";
 import {useMemo} from "react";
 
+import {levelState, chosenListState,answerListState } from '../recoil';
+import { useRecoilState } from "recoil";
+
 const jjangGu_LIST: CardType[] = [
   {id: 1, name: "맹구", img: "src/assets/맹구.PNG",},
   {id: 2, name: "부리부리", img: "src/assets/부리부리.PNG",},
@@ -26,8 +29,11 @@ const GameWrapper = styled.section`
 `;
 
 
-const GameSection : React.FC<GameSectionProps> = ({ chosenLevel, findingPair, ChosenList, AnswerList, setChosenList }) => {
-  
+const GameSection : React.FC<GameSectionProps> = ({findingPair}) => {
+  const [level, setLevel] = useRecoilState(levelState);
+  const [chosenList, setChosenList] = useRecoilState(chosenListState);
+  const [answerList, setAnswerList] = useRecoilState(answerListState);
+
   /* 1 .카드 랜덤하게 섞기 */
 
   // 배열을 랜덤으로 섞는 함수
@@ -48,18 +54,18 @@ const GameSection : React.FC<GameSectionProps> = ({ chosenLevel, findingPair, Ch
 
   const GameRandomCard = useMemo(() => {
     let selectedCards: CardType[] = [];
-    if (chosenLevel ==='Easy') {
+    if (level ==='Easy') {
       selectedCards = shuffle(jjangGu_LIST).slice(0, 5).flatMap((card) => [card, card]);
       selectedCards = shuffle(selectedCards);
-    } else if (chosenLevel === 'Normal') {
+    } else if (level === 'Normal') {
       selectedCards = shuffle(jjangGu_LIST).slice(0, 7).flatMap((card) => [card, card]);
       selectedCards = shuffle(selectedCards);
-    } else if (chosenLevel === 'Hard') {
+    } else if (level === 'Hard') {
       selectedCards = shuffle(jjangGu_LIST).slice(0, 9).flatMap((card) => [card, card]);
       selectedCards = shuffle(selectedCards);
     }
     return selectedCards
-  }, [chosenLevel]);
+  }, [level]);
 
   // 2. 반환
   return (
@@ -70,9 +76,6 @@ const GameSection : React.FC<GameSectionProps> = ({ chosenLevel, findingPair, Ch
           name={card.name}
           image={card.img}
           findingPair={findingPair}
-          ChosenList = {ChosenList}
-          AnswerList = {AnswerList}
-          setChosenList={setChosenList}
         />
       ))}
     </GameWrapper>
@@ -80,4 +83,3 @@ const GameSection : React.FC<GameSectionProps> = ({ chosenLevel, findingPair, Ch
 };
 
 export default GameSection;
-

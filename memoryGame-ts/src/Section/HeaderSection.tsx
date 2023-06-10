@@ -1,6 +1,7 @@
 import { HeaderSectionProps } from "../types";
 import styled from "styled-components";
-
+import { levelState, answerListState } from "../recoil";
+import { useRecoilValue } from "recoil";
 const HeaderWrapper = styled.div`
   background-color: rgb(255, 143, 162);
   display: flex;
@@ -47,7 +48,9 @@ const ButtonWrapper = styled.button`
 
 
 
-const HeaderSection: React.FC<HeaderSectionProps> = ({chosenLevel, AnswerList, Reset}) => {
+const HeaderSection: React.FC<HeaderSectionProps> = ({ Reset}) => {
+  const chosenLevel = useRecoilValue(levelState);
+  const answerList = useRecoilValue(answerListState);
 
   const ResetBtn: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({children, ...props}) => {
     return <ButtonWrapper {...props}> {children} </ButtonWrapper>;
@@ -59,7 +62,7 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({chosenLevel, AnswerList, R
         <TitleWrapper>
           <h1 id="title"> 짱구는 못말려 &#128539; 기억력게임 </h1>
           <NumWrapper>
-            {"맞은 개수 : "} {AnswerList.length} /  {""}{chosenLevel === "Easy" ? "5" : chosenLevel === "Normal" ? "7" : "9"}
+            {"맞은 개수 : "} {answerList.length} /  {""}{chosenLevel === "Easy" ? "5" : chosenLevel === "Normal" ? "7" : "9"}
           </NumWrapper>
         </TitleWrapper>
         <ResetWrapper>

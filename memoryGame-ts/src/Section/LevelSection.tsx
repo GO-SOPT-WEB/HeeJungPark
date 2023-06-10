@@ -1,3 +1,4 @@
+
 import {LevelBtnWrapperProps} from "../types"
 import styled from "styled-components";
 
@@ -55,4 +56,3 @@ const LevelSection: React.FC<LevelSectionProps> = ({ chosenLevel, setLevel }) =>
 };
   
 export default LevelSection;
-
