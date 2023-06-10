@@ -3,7 +3,8 @@ import GameSection from "./Section/GameSection";
 import HeaderSection from "./Section/HeaderSection";
 import LevelSection from "./Section/LevelSection";
 import styled from "styled-components";
-import {useState} from "react";
+import {levelState, chosenListState,answerListState } from './recoil';
+import { useRecoilState, useResetRecoilState } from "recoil";
 
 const MainPageWrapper = styled.div`
   background-color: pink;
@@ -13,37 +14,33 @@ const MainPageWrapper = styled.div`
 
 const MainPage = () => {
 
-  const [level, setLevel] = useState<string>("Easy");
-  const [ChosenList, setChosenList] = useState<CardType[]>([]);
-  const [AnswerList, setAnswerList] = useState<{ pair0: CardType; pair1: CardType }[]>([]);
+  const [level, setLevel] = useRecoilState(levelState);
+  const [chosenList, setChosenList] = useRecoilState(chosenListState);
+  const [answerList, setAnswerList] = useRecoilState(answerListState);
+  const resetChosenList = useResetRecoilState(chosenListState);
+  const resetAnswerList = useResetRecoilState(answerListState);
+  
   const findingPair = (card: CardType) => {
-    setChosenList(ChosenList.concat(card))
-    if ((ChosenList.length === 1) && (ChosenList[0].name === card.name)){
-      setAnswerList(AnswerList.concat({pair0: ChosenList[0], pair1: card}));
+    setChosenList((prevChosenList) => prevChosenList.concat(card));
+
+    if (chosenList.length === 1 && chosenList[0].name === card.name) {
+      setAnswerList((prevAnswerList) =>
+        prevAnswerList.concat({ pair0: chosenList[0], pair1: card })
+      );
     }
   };
-  const Reset = () => {
-    setChosenList([]);
-    setAnswerList([]);
-  }
+  
+  const reset = () => {
+    resetChosenList();
+    resetAnswerList();
+  };
   return (
     <>
       <MainPageWrapper>
-        <HeaderSection
-          chosenLevel={level}
-          AnswerList={AnswerList}
-          Reset={Reset}
-        />
-        <LevelSection
-          chosenLevel={level}
-          setLevel={setLevel}
-        />
+        <HeaderSection Reset={reset} />
+        <LevelSection chosenLevel={level} setLevel={setLevel} />
         <GameSection
-          chosenLevel={level}
           findingPair={findingPair}
-          setChosenList={setChosenList}
-          ChosenList = {ChosenList}
-          AnswerList = {AnswerList}
         />
       </MainPageWrapper>
     </>
@@ -51,4 +48,3 @@ const MainPage = () => {
 };
 
 export default MainPage;
-
