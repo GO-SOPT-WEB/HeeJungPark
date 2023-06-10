@@ -6,10 +6,6 @@ import styled from "styled-components";
 import {levelState, chosenListState,answerListState } from './recoil';
 import { useRecoilState, useResetRecoilState } from "recoil";
 
-const MainPageWrapper = styled.div`
-  background-color: pink;
-  height: 100vh;
-`;
 
 
 const MainPage = () => {
@@ -48,3 +44,8 @@ const MainPage = () => {
 };
 
 export default MainPage;
+
+const MainPageWrapper = styled.div`
+  background-color: pink;
+  height: 100vh;
+`;
