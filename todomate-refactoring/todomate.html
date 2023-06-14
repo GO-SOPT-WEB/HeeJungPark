@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 🌷 투두메이트 🌷 </title>
+    <link rel="stylesheet" href="todomate_style.css" />
+    <script  type="module" src = "todomate_script.js"></script>
+</head>
+<body>
+
+    <div class = "container">
+
+        <header>
+
+            <h1 class = "header_title"> 🌷 투두메이트 🌷 </h1>
+
+        </header>
+
+        <main>
+            <section class="cal">
+                <div class = "cal_wrapper">
+                    <p class = "cal_d"> 월 </p>
+                    <div class = "cal_n">
+                        <strong> 3 </strong>
+                    </div>
+                    <img src = "./img/heart.png" alt = "하트">
+                </div>
+                <div class = "cal_wrapper">
+                    <p class = "cal_d"> 화 </p>
+                    <div class = "cal_n">
+                        <strong> 3 </strong>
+                    </div>
+                    <img src = "./img/heart.png" alt = "하트">
+                </div>
+                <div class = "cal_wrapper">
+                    <p class = "cal_d"> 수 </p>
+                    <div class = "cal_n">
+                        <strong> 3 </strong>
+                    </div>
+                    <img src = "./img/heart.png" alt = "하트">
+                </div>
+                <div class = "cal_wrapper">
+                    <p class = "cal_d"> 목 </p>
+                    <div class = "cal_n">
+                        <strong> 3 </strong>
+                    </div>
+                    <img src = "./img/heart.png" alt = "하트">
+                </div>
+                <div class = "cal_wrapper">
+                    <p class = "cal_d"> 금 </p>
+                    <div class = "cal_n">
+                        <strong> 3 </strong>
+                    </div>
+                    <img src = "./img/heart.png" alt = "하트">
+                </div>
+                <div class = "cal_wrapper">
+                    <p class = "cal_d"> 토 </p>
+                    <div class = "cal_n" id = "change">
+                        <strong> 3 </strong>
+                    </div>
+                    <img src = "./img/heart-saturday.png" alt = "하트">
+                </div>
+                <div class = "cal_wrapper">
+                    <p class = "cal_d"> 일 </p>
+                    <div class = "cal_n">
+                        <strong> 3 </strong>
+                    </div>
+                    <img src = "./img/heart.png" alt = "하트">
+                </div>
+            </section>
+
+            <section class = "section_todo">
+            </section>
+
+        </main>
+
+        <div class="modal">
+            <form class="modal_form">
+              <input type="text" class="modal_input">
+              <button type="submit"> + </button>
+            </form>
+        </div>
+          
+
+        <footer class="footer">
+                <button class="footer_button" onClick="location.href='/'">  달력 </button>
+                <button class="footer_button" onClick="location.href='/mycategory.html'"> MY </button>
+        </footer>
+    </div>
+</body>
+</html>
