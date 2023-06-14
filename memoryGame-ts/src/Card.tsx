@@ -1,7 +1,40 @@
-import styled from "styled-components";
-import { useState } from "react";
-import { useEffect } from "react";
+import {CardProps} from "./types"
 
+import styled from "styled-components";
+import { useEffect } from "react";
+import { useState } from "react";
+import {chosenListState, answerListState } from './recoil';
+import { useRecoilState } from "recoil";
+
+const Card: React.FC<CardProps> = ({name,  image, findingPair}) => {
+  const [chosenList, setChosenList] = useRecoilState(chosenListState);
+  const [answerList, setAnswerList] = useRecoilState(answerListState);
+  
+  
+  const [active, setActive] = useState(false);
+  
+  useEffect(() => {
+    if (chosenList.length === 2) {
+      setTimeout(() => setActive(false), 500);
+      setChosenList([]);
+    }
+  }, [chosenList]);
+
+    return (
+    <CardWrapper onClick={()=> {findingPair({ id: 0, name, img: "" }); setActive(true);}}>
+      <article id="card">
+        <div className={`jjanGu ${answerList.some(jjangGu => jjangGu.pair1.name === name || jjangGu.pair0.name === name) ? "active" : active ? "active" : ""}`}>
+          <div id="reverse"> </div>
+          <div id="picture">
+              <img src={image}/>
+          </div>
+        </div>
+      </article>
+    </CardWrapper>
+  );
+};
+
+export default Card;
 
 const CardWrapper = styled.article`
 
@@ -62,33 +95,4 @@ const CardWrapper = styled.article`
     height:100%;
 }
 `;
-
-
-const Card = ({name,  image, findingPair, ChosenList, AnswerList, setChosenList}) => {
-
-  
-  const [active, setActive] = useState(false);
-  
-  useEffect(() => {
-    if (ChosenList.length === 2) {
-      setTimeout(() => setActive(false), 500);
-      setChosenList([]);
-    }
-  }, [ChosenList]);
-
-    return (
-    <CardWrapper onClick={()=> {findingPair({name}); setActive(true);}}>
-      <article id="card">
-        <div className={`jjanGu ${AnswerList.some(jjangGu => jjangGu.pair1.name === name || jjangGu.pair0.name === name) ? "active" : active ? "active" : ""}`}>
-          <div id="reverse"> </div>
-          <div id="picture">
-              <img src={image}/>
-          </div>
-        </div>
-      </article>
-    </CardWrapper>
-  );
-};
-
-export default Card;
 

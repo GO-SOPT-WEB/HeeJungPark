@@ -1,0 +1,133 @@
+* {
+    font-family: 'Do Hyeon', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body {
+    margin: auto;
+    width: 500px;
+    background-color: rgb(255, 255, 255);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(254, 254, 232);
+}
+
+
+.header {
+    padding: 40px;
+    color: rgb(244, 189, 189);
+}
+
+.header_title {
+    font-size : 200%;
+    letter-spacing: 5px;
+} 
+
+
+
+.section_cal {
+    display: grid;
+    box-shadow: 1px 1px 1px 1px gray;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-color: rgb(246, 194, 194);
+    border-radius: 20px;
+    padding: 20px;
+    width: 350px;
+    margin-bottom:40px;
+}
+
+.section_cal_d {
+    font-size: 130%;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+
+.section_cal_n {
+    color: #f7ecd0;
+    position: relative;
+    text-align: center;
+}
+
+.section_cal_n p{
+    color: black;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.section_cal_n i{
+    font-size: 2rem;
+    color:rgb(255, 245, 190);
+    position:absolute;
+    top:0;
+    left:9px;
+}
+
+.section_cal_date {
+    text-align: center;
+}
+
+
+.section_todo {
+    margin-left: 60px;
+    align-items: center;
+    padding-left: 20px;
+    height: 450px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    right: 100px;
+}
+
+.section_todo_ul {
+    align-items: center;
+    margin: 20px;
+    height: 100px;
+    padding-bottom: 20px;
+}
+
+.section_todo_ul h2 {
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px gray;
+    color: rgb(130, 102, 70);
+    background-color: #fdd7a6;
+    height: 20px;
+    display: flex;
+    text-align:center;
+    margin-bottom:20px;
+    justify-content: center;
+}
+
+.section_todo_ul li {
+    color: black;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+.footer_button {
+    font-size: 130%;
+    background-color: #fcb5b5;
+    width: 80px;
+    height: 40px;
+    border-radius: 15px;
+    margin: 40px;
+    box-shadow: 1px 1px 1px 1px gray;
+    cursor: pointer;
+}
+
