@@ -3,89 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> 🌷 투두메이트 🌷 </title>
+    <title> 💛투두메이트💛 </title>
     <link rel="stylesheet" href="todomate_style.css" />
-    <script  type="module" src = "todomate_script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Poor+Story&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
 </head>
 <body>
 
     <div class = "container">
 
-        <header>
+        <header class = "header">
 
-            <h1 class = "header_title"> 🌷 투두메이트 🌷 </h1>
+            <h1 class = "header_title">💛투두메이트💛</h1>
 
         </header>
 
         <main>
-            <section class="cal">
-                <div class = "cal_wrapper">
-                    <p class = "cal_d"> 월 </p>
-                    <div class = "cal_n">
-                        <strong> 3 </strong>
-                    </div>
-                    <img src = "./img/heart.png" alt = "하트">
-                </div>
-                <div class = "cal_wrapper">
-                    <p class = "cal_d"> 화 </p>
-                    <div class = "cal_n">
-                        <strong> 3 </strong>
-                    </div>
-                    <img src = "./img/heart.png" alt = "하트">
-                </div>
-                <div class = "cal_wrapper">
-                    <p class = "cal_d"> 수 </p>
-                    <div class = "cal_n">
-                        <strong> 3 </strong>
-                    </div>
-                    <img src = "./img/heart.png" alt = "하트">
-                </div>
-                <div class = "cal_wrapper">
-                    <p class = "cal_d"> 목 </p>
-                    <div class = "cal_n">
-                        <strong> 3 </strong>
-                    </div>
-                    <img src = "./img/heart.png" alt = "하트">
-                </div>
-                <div class = "cal_wrapper">
-                    <p class = "cal_d"> 금 </p>
-                    <div class = "cal_n">
-                        <strong> 3 </strong>
-                    </div>
-                    <img src = "./img/heart.png" alt = "하트">
-                </div>
-                <div class = "cal_wrapper">
-                    <p class = "cal_d"> 토 </p>
-                    <div class = "cal_n" id = "change">
-                        <strong> 3 </strong>
-                    </div>
-                    <img src = "./img/heart-saturday.png" alt = "하트">
-                </div>
-                <div class = "cal_wrapper">
-                    <p class = "cal_d"> 일 </p>
-                    <div class = "cal_n">
-                        <strong> 3 </strong>
-                    </div>
-                    <img src = "./img/heart.png" alt = "하트">
-                </div>
+            <section class="section_cal">
+                <p class = "section_cal_d"> 월 </p>
+                <p class = "section_cal_d"> 화 </p>
+                <p class = "section_cal_d"> 수 </p>
+                <p class = "section_cal_d"> 목 </p>
+                <p class = "section_cal_d"> 금 </p>
+                <p class = "section_cal_d"> 토 </p>
+                <p class = "section_cal_d"> 일 </p>
+
+                <div class = "section_cal_n"> <p> 3 </p> <i class="fas fa-solid fa-heart fa-lg"></i></div>
+                <div class = "section_cal_n"> <p> 11 </p> <i class="fas fa-solid fa-heart fa-lg" style="color:red;"></i></div>
+                <div class = "section_cal_n"> <p> 2 </p> <i class="fas fa-solid fa-heart fa-lg"></i></div>
+                <div class = "section_cal_n"> <p> 4 </p> <i class="fas fa-solid fa-heart fa-lg"></i></div>
+                <div class = "section_cal_n"> <p> 6 </p> <i class="fas fa-solid fa-heart fa-lg"></i></div>
+                <div class = "section_cal_n"> <p> 9 </p> <i class="fas fa-solid fa-heart fa-lg"></i></div>
+                <div class = "section_cal_n"> <p> 7 </p> <i class="fas fa-solid fa-heart fa-lg"></i></div>
+
+                <p class="section_cal_date"> 25 </p>
+                <p class="section_cal_date"> 26 </p>
+                <p class="section_cal_date"> 27 </p>
+                <p class="section_cal_date"> 28 </p>
+                <p class="section_cal_date"> 29 </p>
+                <p class="section_cal_date"> 30 </p>
+                <p class="section_cal_date"> 1 </p>
             </section>
 
             <section class = "section_todo">
+                <ul class="section_todo_ul">
+                    <h2 style = "background-color:rgb(211, 240, 208);"> 솝트 </h2>
+                    <li>💗 세미나 과제 </li>
+                    <li>🖤 스터디 과제 </li>
+                </ul>
+                <ul class="section_todo_ul">
+                    <h2 style = "background-color:rgb(202, 226, 251);"> 학교수업 </h2>
+                    <li>💗 소공 팀플 </li>
+                    <li>🖤 운체 퀴즈 </li>
+                    <li>💗 시프 과제 </li>
+                </ul>
+                <ul class="section_todo_ul">
+                    <h2  style = "background-color:rgb(227, 199, 247);"> 루틴 </h2>
+                    <li>💗 물 2L 마시기 </li>
+                    <li>🖤 자전거 타기 </li>
+                </ul>
+                <ul class="section_todo_ul">
+                    <h2  style = "background-color:rgb(250, 255, 200);"> 청소 </h2>
+                    <li>💗 이불 개기 </li>
+                    <li>🖤 화장실 청소 </li>
+                </ul>
+                <ul class="section_todo_ul">
+                    <h2  style = "background-color:rgb(252, 232, 190);"> 강아지 </h2>
+                    <li>💗 산책 </li>
+                    <li>💗 배변판 청소 </li>
+                </ul>
             </section>
-
         </main>
-
-        <div class="modal">
-            <form class="modal_form">
-              <input type="text" class="modal_input">
-              <button type="submit"> + </button>
-            </form>
-        </div>
-          
-
         <footer class="footer">
-                <button class="footer_button" onClick="location.href='/'">  달력 </button>
-                <button class="footer_button" onClick="location.href='/mycategory.html'"> MY </button>
+                <button class="footer_button"> 달력 </button>
+                <button class="footer_button"> MY </button>
         </footer>
     </div>
 </body>
