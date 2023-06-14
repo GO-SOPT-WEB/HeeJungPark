@@ -1,14 +1,8 @@
-import React, {useState} from "react";
-import styled from "styled-components";
+import GameSection from "./Section/GameSection";
 import HeaderSection from "./Section/HeaderSection";
 import LevelSection from "./Section/LevelSection";
-import GameSection from "./Section/GameSection";
-
-
-const MainPageWrapper = styled.div`
-  background-color: pink;
-  height: 100vh;
-`;
+import styled from "styled-components";
+import {useState} from "react";
 
 const MainPage = () => {
 
@@ -50,4 +44,9 @@ const MainPage = () => {
 };
 
 export default MainPage;
+
+const MainPageWrapper = styled.div`
+  background-color: ${({ theme }) => theme.colors.lightpink};
+  height: 100vh;
+`;
 
