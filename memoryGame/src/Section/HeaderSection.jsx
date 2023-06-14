@@ -1,7 +1,33 @@
 import styled from "styled-components";
 
+const HeaderSection = ({chosenLevel, AnswerList, Reset}) => {
+
+  const ResetBtn = ({children, ...props}) => {
+    return <ButtonWrapper {...props}> {children} </ButtonWrapper>;
+  };
+
+  return (
+    <>
+      <HeaderWrapper>
+        <TitleWrapper>
+          <h1 id="title"> 짱구는 못말려 &#128539; 기억력게임 </h1>
+          <NumWrapper>
+            {"맞은 개수 : "} {AnswerList.length} /  {""}{chosenLevel === "Easy" ? "5" : chosenLevel === "Normal" ? "7" : "9"}
+          </NumWrapper>
+        </TitleWrapper>
+        <ResetWrapper>
+          <ResetBtn onClick={Reset}> RESET! </ResetBtn>
+        </ResetWrapper>
+      </HeaderWrapper>
+    </>
+  );
+};
+
+export default HeaderSection;
+
+
 const HeaderWrapper = styled.div`
-  background-color: rgb(255, 143, 162);
+  background-color: ${({ theme }) => theme.colors.deeppink};
   display: flex;
   height: 250px;
 `;
@@ -43,30 +69,3 @@ const ButtonWrapper = styled.button`
   border-radius: 30%;
   padding: 30px;
 `;
-
-
-
-const HeaderSection = ({chosenLevel, AnswerList, Reset}) => {
-
-  const ResetBtn = ({children, ...props}) => {
-    return <ButtonWrapper {...props}> {children} </ButtonWrapper>;
-  };
-
-  return (
-    <>
-      <HeaderWrapper>
-        <TitleWrapper>
-          <h1 id="title"> 짱구는 못말려 &#128539; 기억력게임 </h1>
-          <NumWrapper>
-            {"맞은 개수 : "} {AnswerList.length} /  {""}{chosenLevel === "Easy" ? "5" : chosenLevel === "Normal" ? "7" : "9"}
-          </NumWrapper>
-        </TitleWrapper>
-        <ResetWrapper>
-          <ResetBtn onClick={Reset}> RESET! </ResetBtn>
-        </ResetWrapper>
-      </HeaderWrapper>
-    </>
-  );
-};
-
-export default HeaderSection;

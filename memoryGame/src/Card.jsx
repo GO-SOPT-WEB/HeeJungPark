@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { useState } from "react";
 import { useEffect } from "react";
-
+import { useState } from "react";
 
 const CardWrapper = styled.article`
 
@@ -91,4 +90,3 @@ const Card = ({name,  image, findingPair, ChosenList, AnswerList, setChosenList}
 };
 
 export default Card;
-

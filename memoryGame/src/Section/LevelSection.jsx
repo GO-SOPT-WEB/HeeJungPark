@@ -1,5 +1,22 @@
 import styled, { css } from "styled-components";
 
+const LevelSection = ({chosenLevel, setLevel}) => {
+
+  const LevelBtn = ({children, ...props}) => {
+    return <LevelBtnWrapper {...props}>{children}</LevelBtnWrapper>;
+  };
+
+  return (
+    <LevelWrapper>
+      <LevelBtn level={"Easy"} chosenLevel={chosenLevel} onClick={() => {setLevel("Easy");}}> {"Easy"} </LevelBtn>
+      <LevelBtn level={"Normal"} chosenLevel={chosenLevel} onClick={() => {setLevel("Normal");}}> {"Normal"} </LevelBtn>
+      <LevelBtn level={"Hard"} chosenLevel={chosenLevel} onClick={() => {setLevel("Hard");}}> {"Hard"} </LevelBtn>
+    </LevelWrapper>
+  );
+};
+
+export default LevelSection;
+
 const LevelWrapper = styled.section`
   display: flex;
   justify-content: space-evenly;
@@ -17,23 +34,4 @@ const LevelBtnWrapper = styled.button`
   margin: 20px;
   font-size: 25px;
 `;
-
-
-
-const LevelSection = ({chosenLevel, setLevel}) => {
-
-  const LevelBtn = ({children, ...props}) => {
-    return <LevelBtnWrapper {...props}>{children}</LevelBtnWrapper>;
-  };
-
-  return (
-    <LevelWrapper>
-      <LevelBtn level={"Easy"} chosenLevel={chosenLevel} onClick={() => {setLevel("Easy");}}> {"Easy"} </LevelBtn>
-      <LevelBtn level={"Normal"} chosenLevel={chosenLevel} onClick={() => {setLevel("Normal");}}> {"Normal"} </LevelBtn>
-      <LevelBtn level={"Hard"} chosenLevel={chosenLevel} onClick={() => {setLevel("Hard");}}> {"Hard"} </LevelBtn>
-    </LevelWrapper>
-  );
-};
-
-export default LevelSection;
 
